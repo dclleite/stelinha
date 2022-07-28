@@ -1,0 +1,10 @@
+INTEIRO numero
+
+LER numero
+
+SE (numero % 2 == 0){
+    IMPRIMIR VERDADE
+}
+SENAO {
+    IMPRIMIR MENTIRA
+}

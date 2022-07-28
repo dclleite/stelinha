@@ -1,0 +1,10 @@
+FLUTUANTE numero1
+FLUTUANTE numero2
+FLUTUANTE soma
+
+numero1 = 5.2
+numero2 = 9,0
+
+soma = numero1 + numero2
+
+IMPRIMIR soma
