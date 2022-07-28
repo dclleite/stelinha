@@ -1,12 +1,12 @@
-BOOLEANO temSol
-BOOLEANO temDinheiro
+BOOLEANO temSol;
+BOOLEANO temDinheiro;
 
-LE#R temSol
-LER temDinheiro
+LE#R temSol;
+LER temDinheiro;
 
 SE (temSol E temDinheiro){
-    IMPRIMIR VERDADE
+    IMPRIMIR VERDADE;
 }
 SENAO {
-    IMPRIMIR MENTIRA
+    IMPRIMIR MENTIRA;
 }

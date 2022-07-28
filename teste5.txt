@@ -1,10 +1,10 @@
-INTEIRO numero
+INTEIRO numero;
 
-LER numero
+LER numero;
 
 SE (numero % 2 == 0){
-    IMPRIMIR VERDADE
+    IMPRIMIR VERDADE;
 }
 SENAO {
-    IMPRIMIR MENTIRA
+    IMPRIMIR MENTIRA;
 }
