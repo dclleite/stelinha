@@ -1,4 +1,4 @@
-// Generated from Stelinha.g4 by ANTLR 4.10.1
+// Generated from /home/dclleite/ufla/compiladores/stelinha/Stelinha.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class StelinhaParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.10.1", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.9.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -108,14 +108,6 @@ public class StelinhaParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_inicio; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof StelinhaListener ) ((StelinhaListener)listener).enterInicio(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof StelinhaListener ) ((StelinhaListener)listener).exitInicio(this);
-		}
 	}
 
 	public final InicioContext inicio() throws RecognitionException {
@@ -149,10 +141,9 @@ public class StelinhaParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u001c\u0005\u0002\u0000\u0007\u0000\u0001\u0000\u0001\u0000"+
-		"\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0001\u0002\u0000\u0001\u0002"+
-		"\u0005\b\u0003\u0000\u0002\u0001\u0000\u0000\u0000\u0002\u0003\u0007\u0000"+
-		"\u0000\u0000\u0003\u0001\u0001\u0000\u0000\u0000\u0000";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\36\7\4\2\t\2\3\2"+
+		"\3\2\3\2\2\2\3\2\2\3\4\2\3\4\7\n\2\5\2\4\3\2\2\2\4\5\t\2\2\2\5\3\3\2\2"+
+		"\2\2";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
