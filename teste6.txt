@@ -1,0 +1,7 @@
+CARACTER nome;
+
+IMPRIMIR ("Olá! Digite seu nome: "));
+
+LER nome;
+
+IMPRIMIR ("Seja bem vindo(a) ", nome, "!");
