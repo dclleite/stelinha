@@ -1,10 +1,12 @@
-INTEIRO numero;
+programa
+    INTEIRO numero;
 
-LER numero;
+    LER numero;
 
-SE (numero % 2 == 0){
-    IMPRIMIR VERDADE;
-}
-SENAO {
-    IMPRIMIR MENTIRA;
-}
+    SE (numero % 2 == 0){
+        IMPRIMIR VERDADE;
+    }
+    SENAO {
+        IMPRIMIR MENTIRA;
+    }
+fim

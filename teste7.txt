@@ -1,0 +1,11 @@
+programa
+  FLUTUANTE nota1 = 6.8;  
+  FLUTUANTE nota2 = 9.5;
+  FLUTUANTE nota3 = 4.3;
+
+  SE((nota1 + nota2 + nota3)  3 >= 6) {
+    IMPRIMIR "Aprovado";
+  } SENAO {
+    IMPRIMIR "Reprovado";
+  }
+fim

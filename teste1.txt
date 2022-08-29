@@ -1,17 +1,19 @@
-INTEIRO anoNascimento;
-INTEIRO anoAtual;
-INTEIRO idade;
-CARACTER nome;
+programa
+    INTEIRO anoNascimento;
+    INTEIRO anoAtual;
+    INTEIRO idade;
+    CARACTER nome;
 
-LER anoNascimento;
-LER anoAtual;
+    LER anoNascimento;
+    LER anoAtual;
 
-idade = anoAtual - anoNascimento;
+    idade = anoAtual - anoNascimento;
 
-SE (idade >= 18){
-    LER nome;
-    IMPRIMIR nome + ", sua entrada foi permitida.";
-}
-SENAO {
-    IMPRIMIR "Sinto muito, sua entrada nao foi permitida.";
-}
+    SE (idade >= 18){
+        LER nome;
+        IMPRIMIR nome + ", sua entrada foi permitida.";
+    }
+    SENAO {
+        IMPRIMIR "Sinto muito, sua entrada nao foi permitida.";
+    }
+fim

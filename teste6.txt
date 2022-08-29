@@ -1,7 +1,9 @@
-CARACTER nome;
+programa 
+  CARACTER nome;
 
-IMPRIMIR "Olá! Digite seu nome: "");
+  IMPRIMIR "Olá! Digite seu nome: "");
 
-LER nome;
+  LER nome;
 
-IMPRIMIR "Seja bem vindo(a) " + nome;
+  IMPRIMIR "Seja bem vindo(a) " + nome;
+fim

@@ -1,10 +1,23 @@
 grammar Stelinha;
 
-inicio: TIPO | SE | ENQUANTO | PARA | LER | IMPRIMIR;
+inicio: 'programa' bloco 'fim';
+bloco: (comando)+;
+comando: comandoLeitura | comandoEscrita | comandoAtrib | comandoDeclaracao | comandoCondicao | comandoEnquanto | comandoCondicao;
+comandoLeitura: 'LER' ID FL;
+comandoEscrita: 'IMPRIMIR' expressao FL;
+comandoAtrib: ID RECEBE expressao FL;
+comandoDeclaracao: TIPO ID (RECEBE expressao)* FL;
+comandoEnquanto: ENQUANTO expressao subBloco;
+comandoCondicao: ((SE AP expressao FP) | SENAO) subBloco;
+subBloco: AC (comando)+ FC;
+expressao: (AP)* '!'* termo (FP)* ((OPBOL | OPREL | OPARIT) expressao)*;
+termo: ID | NUM | CARAC | VERDADE | MENTIRA;
+
+PROGRAMA: 'programa';
+FIM: 'fim';
 TIPO: 'INTEIRO' | 'FLUTUANTE' | 'CARACTER' | 'BOOLEANO';
 SE: 'SE';
 SENAO: 'SENAO';
-ENTAO: 'ENTAO';
 ENQUANTO: 'ENQUANTO';
 PARA: 'PARA';
 LER: 'LER';
@@ -13,7 +26,7 @@ RETORNAR: 'RETORNAR';
 FUNCAO: 'FUNCAO';
 ID: LETRAMINUSCULA+(DIGITO | LETRA)*;
 NUM: DIGITO+('.'DIGITO+)?;
-CARAC: '"' ~('\r' | '\n' )* '"' ;
+CARAC: '"' ~('\r' | '\n' )* '"';
 VERDADE: 'VERDADE';
 MENTIRA: 'MENTIRA';
 RECEBE: '=';

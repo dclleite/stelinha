@@ -1,12 +1,14 @@
-BOOLEANO temSol;
-BOOLEANO temDinheiro;
+programa
+    BOOLEANO temSol;
+    BOOLEANO temDinheiro;
 
-LE#R temSol;
-LER temDinheiro;
+    LER temSol;
+    LER temDinheiro;
 
-SE (temSol E temDinheiro){
-    IMPRIMIR VERDADE;
-}
-SENAO {
-    IMPRIMIR MENTIRA;
-}
+    SE (!temSol E !temDinheiro){
+        IMPRIMIR VERDADE;
+    }
+    SENAO {
+        IMPRIMIR MENTIRA;
+    }
+fim
