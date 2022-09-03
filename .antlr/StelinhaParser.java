@@ -108,6 +108,7 @@ public class StelinhaParser extends Parser {
 			return getRuleContext(BlocoContext.class,0);
 		}
 		public TerminalNode FIM() { return getToken(StelinhaParser.FIM, 0); }
+		public TerminalNode EOF() { return getToken(StelinhaParser.EOF, 0); }
 		public InicioContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -126,6 +127,8 @@ public class StelinhaParser extends Parser {
 			bloco();
 			setState(26);
 			match(FIM);
+			setState(27);
+			match(EOF);
 			}
 		}
 		catch (RecognitionException re) {
@@ -159,17 +162,17 @@ public class StelinhaParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(29); 
+			setState(30); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(28);
+				setState(29);
 				comando();
 				}
 				}
-				setState(31); 
+				setState(32); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << TIPO) | (1L << SE) | (1L << SENAO) | (1L << ENQUANTO) | (1L << LER) | (1L << IMPRIMIR) | (1L << ID))) != 0) );
@@ -215,55 +218,55 @@ public class StelinhaParser extends Parser {
 		ComandoContext _localctx = new ComandoContext(_ctx, getState());
 		enterRule(_localctx, 4, RULE_comando);
 		try {
-			setState(40);
+			setState(41);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(33);
+				setState(34);
 				comandoLeitura();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(34);
+				setState(35);
 				comandoEscrita();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(35);
+				setState(36);
 				comandoAtrib();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(36);
+				setState(37);
 				comandoDeclaracao();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(37);
+				setState(38);
 				comandoCondicao();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(38);
+				setState(39);
 				comandoEnquanto();
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(39);
+				setState(40);
 				comandoCondicao();
 				}
 				break;
@@ -296,11 +299,11 @@ public class StelinhaParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(42);
-			match(LER);
 			setState(43);
-			match(ID);
+			match(LER);
 			setState(44);
+			match(ID);
+			setState(45);
 			match(FL);
 			}
 		}
@@ -333,11 +336,11 @@ public class StelinhaParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(46);
-			match(IMPRIMIR);
 			setState(47);
-			expressao();
+			match(IMPRIMIR);
 			setState(48);
+			expressao();
+			setState(49);
 			match(FL);
 			}
 		}
@@ -371,13 +374,13 @@ public class StelinhaParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(50);
-			match(ID);
 			setState(51);
-			match(RECEBE);
+			match(ID);
 			setState(52);
-			expressao();
+			match(RECEBE);
 			setState(53);
+			expressao();
+			setState(54);
 			match(FL);
 			}
 		}
@@ -419,27 +422,27 @@ public class StelinhaParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(55);
-			match(TIPO);
 			setState(56);
+			match(TIPO);
+			setState(57);
 			match(ID);
-			setState(61);
+			setState(62);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==RECEBE) {
 				{
 				{
-				setState(57);
-				match(RECEBE);
 				setState(58);
+				match(RECEBE);
+				setState(59);
 				expressao();
 				}
 				}
-				setState(63);
+				setState(64);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(64);
+			setState(65);
 			match(FL);
 			}
 		}
@@ -474,11 +477,11 @@ public class StelinhaParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(66);
-			match(ENQUANTO);
 			setState(67);
-			expressao();
+			match(ENQUANTO);
 			setState(68);
+			expressao();
+			setState(69);
 			subBloco();
 			}
 		}
@@ -516,33 +519,33 @@ public class StelinhaParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(76);
+			setState(77);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case SE:
 				{
 				{
-				setState(70);
-				match(SE);
 				setState(71);
-				match(AP);
+				match(SE);
 				setState(72);
-				expressao();
+				match(AP);
 				setState(73);
+				expressao();
+				setState(74);
 				match(FP);
 				}
 				}
 				break;
 			case SENAO:
 				{
-				setState(75);
+				setState(76);
 				match(SENAO);
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
-			setState(78);
+			setState(79);
 			subBloco();
 			}
 		}
@@ -579,23 +582,23 @@ public class StelinhaParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(80);
+			setState(81);
 			match(AC);
-			setState(82); 
+			setState(83); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(81);
+				setState(82);
 				comando();
 				}
 				}
-				setState(84); 
+				setState(85); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << TIPO) | (1L << SE) | (1L << SENAO) | (1L << ENQUANTO) | (1L << LER) | (1L << IMPRIMIR) | (1L << ID))) != 0) );
-			setState(86);
+			setState(87);
 			match(FC);
 			}
 		}
@@ -654,60 +657,60 @@ public class StelinhaParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(91);
+			setState(92);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==AP) {
 				{
 				{
-				setState(88);
+				setState(89);
 				match(AP);
 				}
 				}
-				setState(93);
+				setState(94);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(97);
+			setState(98);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T__0) {
 				{
 				{
-				setState(94);
+				setState(95);
 				match(T__0);
 				}
 				}
-				setState(99);
+				setState(100);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(100);
+			setState(101);
 			termo();
-			setState(104);
+			setState(105);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,7,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(101);
+					setState(102);
 					match(FP);
 					}
 					} 
 				}
-				setState(106);
+				setState(107);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,7,_ctx);
 			}
-			setState(111);
+			setState(112);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,8,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(107);
+					setState(108);
 					_la = _input.LA(1);
 					if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OPARIT) | (1L << OPREL) | (1L << OPBOL))) != 0)) ) {
 					_errHandler.recoverInline(this);
@@ -717,12 +720,12 @@ public class StelinhaParser extends Parser {
 						_errHandler.reportMatch(this);
 						consume();
 					}
-					setState(108);
+					setState(109);
 					expressao();
 					}
 					} 
 				}
-				setState(113);
+				setState(114);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,8,_ctx);
 			}
@@ -758,7 +761,7 @@ public class StelinhaParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(114);
+			setState(115);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ID) | (1L << NUM) | (1L << CARAC) | (1L << VERDADE) | (1L << MENTIRA))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -782,35 +785,35 @@ public class StelinhaParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3 w\4\2\t\2\4\3\t\3"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3 x\4\2\t\2\4\3\t\3"+
 		"\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f"+
-		"\t\f\4\r\t\r\3\2\3\2\3\2\3\2\3\3\6\3 \n\3\r\3\16\3!\3\4\3\4\3\4\3\4\3"+
-		"\4\3\4\3\4\5\4+\n\4\3\5\3\5\3\5\3\5\3\6\3\6\3\6\3\6\3\7\3\7\3\7\3\7\3"+
-		"\7\3\b\3\b\3\b\3\b\7\b>\n\b\f\b\16\bA\13\b\3\b\3\b\3\t\3\t\3\t\3\t\3\n"+
-		"\3\n\3\n\3\n\3\n\3\n\5\nO\n\n\3\n\3\n\3\13\3\13\6\13U\n\13\r\13\16\13"+
-		"V\3\13\3\13\3\f\7\f\\\n\f\f\f\16\f_\13\f\3\f\7\fb\n\f\f\f\16\fe\13\f\3"+
-		"\f\3\f\7\fi\n\f\f\f\16\fl\13\f\3\f\3\f\7\fp\n\f\f\f\16\fs\13\f\3\r\3\r"+
-		"\3\r\2\2\16\2\4\6\b\n\f\16\20\22\24\26\30\2\4\3\2\25\27\3\2\17\23\2x\2"+
-		"\32\3\2\2\2\4\37\3\2\2\2\6*\3\2\2\2\b,\3\2\2\2\n\60\3\2\2\2\f\64\3\2\2"+
-		"\2\169\3\2\2\2\20D\3\2\2\2\22N\3\2\2\2\24R\3\2\2\2\26]\3\2\2\2\30t\3\2"+
-		"\2\2\32\33\7\4\2\2\33\34\5\4\3\2\34\35\7\5\2\2\35\3\3\2\2\2\36 \5\6\4"+
-		"\2\37\36\3\2\2\2 !\3\2\2\2!\37\3\2\2\2!\"\3\2\2\2\"\5\3\2\2\2#+\5\b\5"+
-		"\2$+\5\n\6\2%+\5\f\7\2&+\5\16\b\2\'+\5\22\n\2(+\5\20\t\2)+\5\22\n\2*#"+
-		"\3\2\2\2*$\3\2\2\2*%\3\2\2\2*&\3\2\2\2*\'\3\2\2\2*(\3\2\2\2*)\3\2\2\2"+
-		"+\7\3\2\2\2,-\7\13\2\2-.\7\17\2\2./\7\36\2\2/\t\3\2\2\2\60\61\7\f\2\2"+
-		"\61\62\5\26\f\2\62\63\7\36\2\2\63\13\3\2\2\2\64\65\7\17\2\2\65\66\7\24"+
-		"\2\2\66\67\5\26\f\2\678\7\36\2\28\r\3\2\2\29:\7\6\2\2:?\7\17\2\2;<\7\24"+
-		"\2\2<>\5\26\f\2=;\3\2\2\2>A\3\2\2\2?=\3\2\2\2?@\3\2\2\2@B\3\2\2\2A?\3"+
-		"\2\2\2BC\7\36\2\2C\17\3\2\2\2DE\7\t\2\2EF\5\26\f\2FG\5\24\13\2G\21\3\2"+
-		"\2\2HI\7\7\2\2IJ\7\32\2\2JK\5\26\f\2KL\7\33\2\2LO\3\2\2\2MO\7\b\2\2NH"+
-		"\3\2\2\2NM\3\2\2\2OP\3\2\2\2PQ\5\24\13\2Q\23\3\2\2\2RT\7\34\2\2SU\5\6"+
-		"\4\2TS\3\2\2\2UV\3\2\2\2VT\3\2\2\2VW\3\2\2\2WX\3\2\2\2XY\7\35\2\2Y\25"+
-		"\3\2\2\2Z\\\7\32\2\2[Z\3\2\2\2\\_\3\2\2\2][\3\2\2\2]^\3\2\2\2^c\3\2\2"+
-		"\2_]\3\2\2\2`b\7\3\2\2a`\3\2\2\2be\3\2\2\2ca\3\2\2\2cd\3\2\2\2df\3\2\2"+
-		"\2ec\3\2\2\2fj\5\30\r\2gi\7\33\2\2hg\3\2\2\2il\3\2\2\2jh\3\2\2\2jk\3\2"+
-		"\2\2kq\3\2\2\2lj\3\2\2\2mn\t\2\2\2np\5\26\f\2om\3\2\2\2ps\3\2\2\2qo\3"+
-		"\2\2\2qr\3\2\2\2r\27\3\2\2\2sq\3\2\2\2tu\t\3\2\2u\31\3\2\2\2\13!*?NV]"+
-		"cjq";
+		"\t\f\4\r\t\r\3\2\3\2\3\2\3\2\3\2\3\3\6\3!\n\3\r\3\16\3\"\3\4\3\4\3\4\3"+
+		"\4\3\4\3\4\3\4\5\4,\n\4\3\5\3\5\3\5\3\5\3\6\3\6\3\6\3\6\3\7\3\7\3\7\3"+
+		"\7\3\7\3\b\3\b\3\b\3\b\7\b?\n\b\f\b\16\bB\13\b\3\b\3\b\3\t\3\t\3\t\3\t"+
+		"\3\n\3\n\3\n\3\n\3\n\3\n\5\nP\n\n\3\n\3\n\3\13\3\13\6\13V\n\13\r\13\16"+
+		"\13W\3\13\3\13\3\f\7\f]\n\f\f\f\16\f`\13\f\3\f\7\fc\n\f\f\f\16\ff\13\f"+
+		"\3\f\3\f\7\fj\n\f\f\f\16\fm\13\f\3\f\3\f\7\fq\n\f\f\f\16\ft\13\f\3\r\3"+
+		"\r\3\r\2\2\16\2\4\6\b\n\f\16\20\22\24\26\30\2\4\3\2\25\27\3\2\17\23\2"+
+		"y\2\32\3\2\2\2\4 \3\2\2\2\6+\3\2\2\2\b-\3\2\2\2\n\61\3\2\2\2\f\65\3\2"+
+		"\2\2\16:\3\2\2\2\20E\3\2\2\2\22O\3\2\2\2\24S\3\2\2\2\26^\3\2\2\2\30u\3"+
+		"\2\2\2\32\33\7\4\2\2\33\34\5\4\3\2\34\35\7\5\2\2\35\36\7\2\2\3\36\3\3"+
+		"\2\2\2\37!\5\6\4\2 \37\3\2\2\2!\"\3\2\2\2\" \3\2\2\2\"#\3\2\2\2#\5\3\2"+
+		"\2\2$,\5\b\5\2%,\5\n\6\2&,\5\f\7\2\',\5\16\b\2(,\5\22\n\2),\5\20\t\2*"+
+		",\5\22\n\2+$\3\2\2\2+%\3\2\2\2+&\3\2\2\2+\'\3\2\2\2+(\3\2\2\2+)\3\2\2"+
+		"\2+*\3\2\2\2,\7\3\2\2\2-.\7\13\2\2./\7\17\2\2/\60\7\36\2\2\60\t\3\2\2"+
+		"\2\61\62\7\f\2\2\62\63\5\26\f\2\63\64\7\36\2\2\64\13\3\2\2\2\65\66\7\17"+
+		"\2\2\66\67\7\24\2\2\678\5\26\f\289\7\36\2\29\r\3\2\2\2:;\7\6\2\2;@\7\17"+
+		"\2\2<=\7\24\2\2=?\5\26\f\2><\3\2\2\2?B\3\2\2\2@>\3\2\2\2@A\3\2\2\2AC\3"+
+		"\2\2\2B@\3\2\2\2CD\7\36\2\2D\17\3\2\2\2EF\7\t\2\2FG\5\26\f\2GH\5\24\13"+
+		"\2H\21\3\2\2\2IJ\7\7\2\2JK\7\32\2\2KL\5\26\f\2LM\7\33\2\2MP\3\2\2\2NP"+
+		"\7\b\2\2OI\3\2\2\2ON\3\2\2\2PQ\3\2\2\2QR\5\24\13\2R\23\3\2\2\2SU\7\34"+
+		"\2\2TV\5\6\4\2UT\3\2\2\2VW\3\2\2\2WU\3\2\2\2WX\3\2\2\2XY\3\2\2\2YZ\7\35"+
+		"\2\2Z\25\3\2\2\2[]\7\32\2\2\\[\3\2\2\2]`\3\2\2\2^\\\3\2\2\2^_\3\2\2\2"+
+		"_d\3\2\2\2`^\3\2\2\2ac\7\3\2\2ba\3\2\2\2cf\3\2\2\2db\3\2\2\2de\3\2\2\2"+
+		"eg\3\2\2\2fd\3\2\2\2gk\5\30\r\2hj\7\33\2\2ih\3\2\2\2jm\3\2\2\2ki\3\2\2"+
+		"\2kl\3\2\2\2lr\3\2\2\2mk\3\2\2\2no\t\2\2\2oq\5\26\f\2pn\3\2\2\2qt\3\2"+
+		"\2\2rp\3\2\2\2rs\3\2\2\2s\27\3\2\2\2tr\3\2\2\2uv\t\3\2\2v\31\3\2\2\2\13"+
+		"\"+@OW^dkr";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

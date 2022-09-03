@@ -1,6 +1,6 @@
 grammar Stelinha;
 
-inicio: 'programa' bloco 'fim';
+inicio: PROGRAMA bloco FIM EOF;
 bloco: (comando)+;
 comando: comandoLeitura | comandoEscrita | comandoAtrib | comandoDeclaracao | comandoCondicao | comandoEnquanto | comandoCondicao;
 comandoLeitura: 'LER' ID FL;
