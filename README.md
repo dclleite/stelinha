@@ -2,6 +2,8 @@
 ### Linguagem de programação em desenvolvimento: STELINHA
 
 - PARTE 1: ANALISADOR LÉXICO
+- PARTE 2: ANALISADOR SINTÁTICO
+- PARTE 2: ANALISADOR SEMÂNTICO
 
 #### Equipe:
 - Eduardo Carvalho Leite
