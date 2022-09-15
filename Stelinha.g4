@@ -5,12 +5,12 @@ bloco: (comando)+ #NBloco;
 comando: comandoLeitura | comandoEscrita | comandoAtrib | comandoDeclaracao | comandoCondicao | comandoEnquanto | comandoCondicao;
 comandoLeitura: 'LER' ID FL #NLeitura;
 comandoEscrita: 'IMPRIMIR' expressao FL #NEscrita;
-comandoAtrib: ID RECEBE expressao FL #NAtribuicao;
+comandoAtrib: ID RECEBE (termo | expressao) FL #NAtribuicao;
 comandoDeclaracao: TIPO ID (RECEBE expressao)* FL #NDeclaracao;
 comandoEnquanto: ENQUANTO expressao subBloco #NEnquanto;
 comandoCondicao: ((SE AP expressao FP) | SENAO) subBloco #NCondicional;
 subBloco: AC (comando)+ FC #NSubBloco;
-expressao:(((OPBOL)* termo ((OPBOL | OPREL | OPARIT) expressao)*) | AP expressao FP) #NExpressao;
+expressao: (AP)* '!'* termo (FP)* ((OPBOL | OPREL | OPARIT) expressao)* #NExpressao;
 
 termo: ID | NUM | CARAC | VERDADE | MENTIRA #NTermo;
 
