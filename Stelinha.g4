@@ -1,17 +1,18 @@
 grammar Stelinha;
 
-inicio: PROGRAMA bloco FIM EOF;
-bloco: (comando)+;
+inicio: PROGRAMA bloco FIM EOF #NInicio;
+bloco: (comando)+ #NBloco;
 comando: comandoLeitura | comandoEscrita | comandoAtrib | comandoDeclaracao | comandoCondicao | comandoEnquanto | comandoCondicao;
-comandoLeitura: 'LER' ID FL;
-comandoEscrita: 'IMPRIMIR' expressao FL;
-comandoAtrib: ID RECEBE expressao FL;
-comandoDeclaracao: TIPO ID (RECEBE expressao)* FL;
-comandoEnquanto: ENQUANTO expressao subBloco;
-comandoCondicao: ((SE AP expressao FP) | SENAO) subBloco;
-subBloco: AC (comando)+ FC;
-expressao: (AP)* '!'* termo (FP)* ((OPBOL | OPREL | OPARIT) expressao)*;
-termo: ID | NUM | CARAC | VERDADE | MENTIRA;
+comandoLeitura: 'LER' ID FL #NLeitura;
+comandoEscrita: 'IMPRIMIR' expressao FL #NEscrita;
+comandoAtrib: ID RECEBE expressao FL #NAtribuicao;
+comandoDeclaracao: TIPO ID (RECEBE expressao)* FL #NDeclaracao;
+comandoEnquanto: ENQUANTO expressao subBloco #NEnquanto;
+comandoCondicao: ((SE AP expressao FP) | SENAO) subBloco #NCondicional;
+subBloco: AC (comando)+ FC #NSubBloco;
+expressao:(((OPBOL)* termo ((OPBOL | OPREL | OPARIT) expressao)*) | AP expressao FP) #NExpressao;
+
+termo: ID | NUM | CARAC | VERDADE | MENTIRA #NTermo;
 
 PROGRAMA: 'programa';
 FIM: 'fim';
